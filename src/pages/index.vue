@@ -7,10 +7,11 @@
       <v-col
         v-for="pokemon in pokemons"
         :key="pokemon.id"
-        cols="5"
-        lg="2"
-      >
-        <pokemon-card :pokemon="pokemon">{{pokemon}}</pokemon-card>
+        cols="6"
+        lg="3"
+        md="4"
+        sm="6"
+      ><pokemon-card :pokemon="pokemons" />
       </v-col>
     </v-row>
   </v-container>
@@ -19,6 +20,8 @@
 <script setup>
   import { storeToRefs } from 'pinia'
   import { usePokemonStore } from '@/stores/pokemonStore'
+  import PokemonCard from '@/components/PokemonCard.vue'
+
   // On récupère les données du store Pokemon
   const pokemonStore = usePokemonStore()
   // On transforme le store en refs (données réactives)
