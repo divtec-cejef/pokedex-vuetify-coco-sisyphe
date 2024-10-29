@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="mb-6 text-center">Pokédex</h1>
+    <h1 class="mb-6 text-center">Pokédex : page d'accueil</h1>
   </v-container>
   <v-container>
     <v-row>
@@ -11,7 +11,7 @@
         lg="3"
         md="4"
         sm="6"
-      ><pokemon-card :pokemon="pokemons" />
+      >{{ pokemon }}<pokemon-card :pokemon="pokemons" />
       </v-col>
     </v-row>
   </v-container>

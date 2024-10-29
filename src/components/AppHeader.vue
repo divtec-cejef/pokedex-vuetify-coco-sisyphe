@@ -23,8 +23,8 @@
 
   const menuItems = reactive([
     { title: 'Accueil', path: '/', icon: 'mdi-pokeball' },
-    { title: 'Favori', path: '/favori', icon: 'mdi-heart-multiple' },
-    { title: 'FAQ', path: '/faq', icon: 'mdi-forum' },
-    { title: 'Monde', path: '/monde', icon: 'mdi-map' },
+    { title: 'Favori', path: '/Favoris', icon: 'mdi-heart-multiple' },
+    { title: 'FAQ', path: '/FAQ', icon: 'mdi-forum' },
+    { title: 'KantoMap', path: '/KantoMap', icon: 'mdi-map' },
   ])
 </script>
