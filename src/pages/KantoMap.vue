@@ -6,7 +6,7 @@
     <h1 class="mb-6 text-center">Monde Pokemon</h1>
   </v-container>
   <v-container>
-    <div class="text-center pa-4">
+    <div class="text-center py-2">
       <v-btn @click="dialog = true">
         Carte du Monde Pokemon
       </v-btn>
@@ -22,7 +22,7 @@
           <v-img
             src="/images/pokemon-map.png"
           />
-          <template v-slot:actions>
+          <template #actions>
             <v-btn
               class="ms-auto"
               text="Ok"

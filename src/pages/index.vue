@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="mb-6 text-center">Pokédex : page d'accueil</h1>
+    <h1 class="mb-6 text-center">Pokédex</h1>
   </v-container>
   <v-container>
     <v-row>
@@ -11,19 +11,26 @@
         lg="3"
         md="4"
         sm="6"
-      >{{ pokemon }}<pokemon-card :pokemon="pokemons" />
+      >
+        <pokemon-card :pokemon="pokemon" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
-  import { storeToRefs } from 'pinia'
   import { usePokemonStore } from '@/stores/pokemonStore'
-  import PokemonCard from '@/components/PokemonCard.vue'
+  import { storeToRefs } from 'pinia'
 
-  // On récupère les données du store Pokemon
+  // Récupère le magasin des Pokémons
   const pokemonStore = usePokemonStore()
-  // On transforme le store en refs (données réactives)
+
+  /* Récupère les données pokemons, selectedPokemon, favorites
+  * et les transforme directement en refs (données réactives) dans le composant
+  * Elles sont donc directement accessibles dans le template HTML
+  *
+  * Attention à ne pas oublier le .value dans le <script> pour accéder à la valeur
+  * comme pour les autre refs.
+  */
   const { pokemons } = storeToRefs(pokemonStore)
 </script>

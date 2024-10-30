@@ -7,7 +7,7 @@
         size="64"
         @click="$router.push('/')"
       />
-      <v-toolbar-title>Pokedex</v-toolbar-title>
+      <v-toolbar-title>Pokédex</v-toolbar-title>
       <v-btn
         v-for="link in menuItems"
         :key="link.title"
@@ -20,11 +20,12 @@
 
 <script setup>
   import { reactive } from 'vue'
+  import { createRouter as $router } from 'vue-router'
 
   const menuItems = reactive([
     { title: 'Accueil', path: '/', icon: 'mdi-pokeball' },
-    { title: 'Favori', path: '/Favoris', icon: 'mdi-heart-multiple' },
-    { title: 'FAQ', path: '/FAQ', icon: 'mdi-forum' },
-    { title: 'KantoMap', path: '/KantoMap', icon: 'mdi-map' },
+    { title: 'Favori', path: '/Favoris', icon: 'mdi-heart-multiple-outline' },
+    { title: 'FAQ', path: '/FAQ', icon: 'mdi-forum-outline' },
+    { title: 'KantoMap', path: '/KantoMap', icon: 'mdi-map-outline' },
   ])
 </script>
