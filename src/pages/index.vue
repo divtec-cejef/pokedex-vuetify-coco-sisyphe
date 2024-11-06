@@ -2,10 +2,11 @@
   <v-container>
     <h1 class="mb-6 text-center">Pokédex</h1>
   </v-container>
+  <SearchBar />
   <v-container>
     <v-row>
       <v-col
-        v-for="pokemon in pokemons"
+        v-for="pokemon in filteredPokemons"
         :key="pokemon.id"
         cols="6"
         lg="3"
@@ -19,8 +20,11 @@
 </template>
 
 <script setup>
-  import { usePokemonStore } from '@/stores/pokemonStore'
+  import { computed, ref } from 'vue'
   import { storeToRefs } from 'pinia'
+  import { usePokemonStore } from '@/stores/pokemonStore'
+  import PokemonCard from '@/components/PokemonCard.vue'
+  import SearchBar from '@/components/SearchBar.vue'
 
   // Récupère le magasin des Pokémons
   const pokemonStore = usePokemonStore()
@@ -32,5 +36,13 @@
   * Attention à ne pas oublier le .value dans le <script> pour accéder à la valeur
   * comme pour les autre refs.
   */
-  const { pokemons } = storeToRefs(pokemonStore)
+  const { pokemons } = storeToRefs(pokemonStore) // Utilise le getter filteredPokemons
+  const search = ref('')
+  const filteredPokemons = computed(() => {
+    if (!search.value) return pokemons.value
+    return pokemons.value.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(search.value.toLowerCase())
+    )
+  })
+
 </script>

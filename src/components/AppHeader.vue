@@ -3,8 +3,7 @@
     <v-container class="d-flex align-start align-center">
       <v-avatar
         class="mr-4 pa-0 cursor-pointer"
-        image="@/assets/pokeball.svg"
-        size="64"
+        icon="mdi-pokeball"
         @click="$router.push('/')"
       />
       <v-toolbar-title>Pokédex</v-toolbar-title>

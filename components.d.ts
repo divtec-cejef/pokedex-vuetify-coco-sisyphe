@@ -12,5 +12,6 @@ declare module 'vue' {
     PokemonSearch: typeof import('./src/components/PokemonSearch.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchBar: typeof import('./src/components/SearchBar.vue')['default']
   }
 }

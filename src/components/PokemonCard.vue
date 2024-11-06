@@ -1,9 +1,8 @@
 <template>
-  <v-card
-    height="445"
-  >
+  <v-card>
     <v-img
       :alt="pokemon.name"
+      class="pt-6"
       :src="pokemonImage"
     />
     <v-card-title
@@ -12,6 +11,9 @@
       {{ pokemon.name }}
     </v-card-title>
     <v-card-subtitle>
+      <v-divider
+        class="mb-4"
+      ></v-divider>
       <v-chip
         v-for="type in pokemon.type.split(',')"
         :key="type"
@@ -20,9 +22,11 @@
       >
         {{ type }}
       </v-chip>
+      <v-container>Niveau {{ pokemon.level }}
+      </v-container>
     </v-card-subtitle>
     <v-card-actions
-      class="d-flex align-end justify-end"
+      class="d-flex align-end justify-end px-2"
     >
       <v-btn
         icon
@@ -51,7 +55,7 @@
   const pokemonStore = usePokemonStore()
   const isFavorite = computed(() => pokemonStore.isFavorite(props.pokemon))
 
-  // Fonction permettant de "d'enlever" les accents des noms
+  // Fonction permettant "d'enlever" les accents des noms
   // des Pokemons lors de la recherche de leur image correspondante
   function removeAccents (str) {
     return str
