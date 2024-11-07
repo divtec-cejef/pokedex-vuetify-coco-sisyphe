@@ -2,7 +2,7 @@
   <v-container>
     <h1 class="mb-6 text-center">Pokédex</h1>
   </v-container>
-  <SearchBar />
+  <search-bar v-model="search" />
   <v-container>
     <v-row>
       <v-col
